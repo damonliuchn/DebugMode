@@ -1,5 +1,35 @@
-apply plugin: 'com.android.library'
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://github.com/MasonLiuChn/MasonMavenRepository/raw/maven/releases"
+        }
+    }
 
+
+    dependencies {
+        classpath 'net.masonliu:supermaven:1.3'
+    }
+}
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'supermaven'
+
+
+superMavenRemoteGitRepo {
+    organization = 'MasonLiuChn'
+    repository = 'MasonMavenRepository'
+    branch = 'maven'
+    type = 'releases'
+}
+
+superMavenPublication {
+    group = 'net.masonliu'
+    artifactId = 'debugmode-library-null'
+    version = '1.0.0'
+    packaging = 'aar'
+    description = "first"
+}
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"

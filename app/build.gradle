@@ -14,10 +14,15 @@ android {
     }
 }
 
+repositories {
+    maven {
+        url "https://github.com/MasonLiuChn/MasonMavenRepository/raw/maven/releases"
+    }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.2.0'
-    
-    debugCompile project(':library')
-    releaseCompile project(':library_null')
+
+    debugCompile 'net.masonliu:debugmode-library:1.0.0'
+    releaseCompile 'net.masonliu:debugmode-library-null:1.0.0'
 }
