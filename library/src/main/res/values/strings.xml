@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name_test">测试环境</string>
+    <string name="app_name_stage">预发布环境</string>
+</resources>
